@@ -1,7 +1,7 @@
 var alarmApp = (function () {
   let alarms = [];
   const alarmList = document.getElementById('alarm-list');
-  
+
   // showing the current time and also checking if the current is matching to any of the alarms
   function clockface() {
     let now = document.getElementById('now');
@@ -14,10 +14,6 @@ var alarmApp = (function () {
 
       if (hh == 0) {
         hh = 12;
-      }
-
-      if (hh == 12) {
-        session = 'PM';
       }
 
       if (hh > 12) {
@@ -37,7 +33,7 @@ var alarmApp = (function () {
       }
     }, 1000);
   }
-  
+
   // adding the alarm in the array.
   function setAlarm(alarm) {
     if (alarm) {
@@ -52,7 +48,7 @@ var alarmApp = (function () {
     }
     showNotifications('something went wrong, cannot set alarm');
   }
-  
+
   // delete a particular alarm
   function deleteAlarm(id) {
     const newalarmsList = alarms.filter(function (alarm) {
@@ -61,7 +57,7 @@ var alarmApp = (function () {
     alarms = newalarmsList;
     renderAlarmList();
   }
-  
+
   // add alarm to UI
   function addAlarmToDOM(alarm) {
     const li = document.createElement('li');
@@ -73,7 +69,7 @@ var alarmApp = (function () {
       `;
     alarmList.append(li);
   }
-  
+
   // render the array of alarms
   function renderAlarmList() {
     alarmList.innerHTML = '';
@@ -86,7 +82,7 @@ var alarmApp = (function () {
       addAlarmToDOM(alarms[i]);
     }
   }
-  
+
   // ring the Alarm if the time matches
   function ringAlarm(time) {
     for (let i = 0; i < alarms.length; i++) {
@@ -96,12 +92,12 @@ var alarmApp = (function () {
       }
     }
   }
-  
+
   // for showing notifications (JS Alert)
   function showNotifications(text) {
     alert(text);
   }
-  
+
   // Handle the input boxes
   function handleAlarmForm(e) {
     e.preventDefault();
@@ -137,7 +133,7 @@ var alarmApp = (function () {
     setAlarm(alarm);
     clearAlarmInputForm();
   }
-  
+
   // Handing click listner for set alarm and delete alarm
   function handleClickListner(e) {
     const target = e.target;
@@ -150,7 +146,7 @@ var alarmApp = (function () {
       return;
     }
   }
-  
+
   // if user pass one digit it converts into two digits
   function changeToTwoDigit(num) {
     num = num.toString();
@@ -158,7 +154,7 @@ var alarmApp = (function () {
     num = num < 10 ? '0' + num : num;
     return num;
   }
-  
+
   // After Adding the alarm input box will empty
   function clearAlarmInputForm() {
     let hh = document.getElementById('hours');
@@ -169,7 +165,7 @@ var alarmApp = (function () {
     mm.value = '';
     ss.value = '';
   }
-  
+
   // not allow to add duplicate alarm
   function duplicateAlarm(alarm) {
     for (let i = 0; i < alarms.length; i++) {
@@ -178,7 +174,7 @@ var alarmApp = (function () {
       }
     }
   }
-  
+
   // To initialize the app
   function initializeApp() {
     clockface();
