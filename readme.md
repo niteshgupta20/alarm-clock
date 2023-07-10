@@ -1,4 +1,4 @@
-# Alarm Clcok
+# Alarm Clock
 
 Simple Alarm Clock with vanilla javascript.
 
@@ -20,4 +20,14 @@ HTML5, CSS3, skeleton css, Javascript
 
 ## Run the Project
 
-git clone
+```
+git clone https://github.com/niteshgupta20/alarm-clock.git
+copy the path of index.html
+hit the path in the browser.
+```
+
+## Links
+
+- github - https://github.com/niteshgupta20/alarm-clock
+
+- Hosted - https://niteshgupta20.github.io/alarm-clock/
