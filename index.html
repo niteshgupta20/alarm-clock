@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Skeleton css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css"
+    integrity="sha512-EZLkOqwILORob+p0BXZc+Vm3RgJBOe1Iq/0fiI7r/wJgzOFZMlsqTa29UEl6v6U6gsV4uIpsNZoV32YZqrCRCQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="./style.css">
+  <title>Alarm Clock</title>
+</head>
+
+<body>
+  <div class="container center">
+    <div class="row">
+      <h3 id="now">00:00:00 PM</h3>
+    </div>
+    <form>
+      <div class="row">
+        <div class="six columns">
+          <input type="number" class="form-data" min="1" max="12" id="hours" value="12" required><span
+            class="colon">:</span>
+          <input type="number" class="form-data" min="0" max="60" id="minutes" value="00" required><span
+            class="colon">:</span>
+          <input type="number" class="form-data" min="0" max="60" id="seconds" value="00" required>
+          <select name="" id="session" class="form-data">
+            <option value="AM">AM</option>
+            <option value="PM">PM</option>
+          </select>
+        </div>
+        <div class="six columns">
+          <input type="submit" value="Set Alram" id="set">
+        </div>
+      </div>
+    </form>
+    <div class="row">
+      <h5>Upcoming Alarms</h5>
+    </div>
+    <div class="row">
+      <ul id="alarm-list">
+        <!-- <li class="list-item">
+          <span class="f-20">04:05:49 PM</span>
+          <button class="delete" href="#">Delete</button>
+        </li> -->
+      </ul>
+    </div>
+  </div>
+  <script src="alarmModule.js"></script>
+  <script type="text/javascript">
+    alarmApp.initialize();
+  </script>
+</body>
+
+</html>
