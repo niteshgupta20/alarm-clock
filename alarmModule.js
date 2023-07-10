@@ -12,14 +12,12 @@ var alarmApp = (function () {
       let ss = date.getSeconds();
       let session = 'AM';
 
-      if (hh == 0) {
-        hh = 12;
-      }
-
-      if (hh > 12) {
+      if (hh >= 12) {
         hh = hh - 12;
         session = 'PM';
       }
+
+      hh = hh === 0 ? 12 : hh;
 
       hh = changeToTwoDigit(hh);
       mm = changeToTwoDigit(mm);
